@@ -1,6 +1,7 @@
 <h1>Books#show</h1>
 <p>Find me in app/views/books/show.html.erb</p>
 
+<!--投稿詳細画面-->
 <h1>New book</h1>
 <%= form_with model: @book do |f| %>
   <h4>Title</h4>
@@ -9,3 +10,11 @@
   <%= f.text_area :body %>
   <%= f.submit 'Create Book' %>
 <% end %>
+
+<h1>Book detail</h1>
+<div>
+  <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
+  <p>ユーザーネーム：<%= @book_detail.user.name %></p>
+  <p>Title：<%= @book_detail.title %></p>
+  <p>Opinion：<%= @book_detail.body %></p>
+</div

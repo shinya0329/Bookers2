@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   def index
     @book = Book.new
-    @books
+    @books = Book.all
   end
   
   def create
@@ -17,6 +17,7 @@ class BooksController < ApplicationController
     @book = Book.new
     @book_detail = Book.find(params[:id])
   end
+  
   
   # 投稿データのストロングパラメータ
   private
