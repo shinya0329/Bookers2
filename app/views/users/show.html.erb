@@ -9,6 +9,8 @@
   <p>introduction</p>
   <h3><%= @user.introduction %></h3>
   
+  <p><%= link_to "プロフィール編集", edit_user_path(current_user.id) %></p>
+  
 </div>
 
 <!-- ユーザーの投稿一覧 -->
