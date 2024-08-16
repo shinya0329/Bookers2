@@ -1,6 +1,19 @@
 <h1>Books#show</h1>
 <p>Find me in app/views/books/show.html.erb</p>
 
+<!-- ユーザーの詳細 -->
+<div>
+  <%= image_tag @user.get_profile_image(100,100) %>
+  <p>name</p>
+  <h3><%= @user.name %></h3>
+  <p>introduction</p>
+  <h3><%= @user.introduction %></h3>
+  
+  <p><%= link_to "プロフィール編集", edit_user_path(current_user.id) %></p>
+  
+</div>
+
+
 <!--投稿詳細画面-->
 <h1>New book</h1>
 <%= form_with model: @book do |f| %>
@@ -13,7 +26,7 @@
 
 <h1>Book detail</h1>
 <div>
-  <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
+  <p>投稿ユーザー画像：<%= image_tag @user.get_profile_image(100,100) %></p>
   <p>ユーザーネーム：<%= @book_detail.user.name %></p>
   <%= link_to book_path(@book_detail.id) do %>
     <p>タイトル：<%= @book_detail.title %></p>
