@@ -17,4 +17,8 @@
   <p>ユーザーネーム：<%= @book_detail.user.name %></p>
   <p>Title：<%= @book_detail.title %></p>
   <p>Opinion：<%= @book_detail.body %></p>
+  
+  <% if @book_detail.user == current_user %>
+    <%= link_to "削除", book_path(@book_detail.id), method: :delete %>
+  <% end %>
 </div
